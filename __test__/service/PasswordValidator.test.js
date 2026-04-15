@@ -31,4 +31,8 @@ describe('PasswordValidator', () => {
         expect(() => PasswordValidator.validar('Abc 123!'))
             .toThrow(mensagens.SENHA_COM_ESPACO);
     });
+
+    test('deve aceitar senha válida', () => {
+        expect(PasswordValidator.validar('Abc123!@')).toBe(true);
+    });
 });
