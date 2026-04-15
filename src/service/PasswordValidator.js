@@ -6,8 +6,11 @@ class PasswordValidator {
         this.validarTamanhoMinimo(senha);
         this.validarMaiuscula(senha);
         this.validarMinuscula(senha);
+        this.validarNumero(senha);
+        this.validarCaractereEspecial(senha);
+        this.validarEspacos(senha);
 
-    return true;
+        return true;
     }
 
     static validarTamanhoMinimo(senha) {
