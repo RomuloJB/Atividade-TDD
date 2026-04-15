@@ -27,6 +27,12 @@ class PasswordValidator {
             throw new Error(mensagens.SENHA_SEM_MINUSCULA);
         }
     }
+
+    static validarNumero(senha) {
+        if (!/[0-9]/.test(senha)) {
+            throw new Error(mensagens.SENHA_SEM_NUMERO);
+        }
+    }
 }
 
 module.exports = { PasswordValidator };
