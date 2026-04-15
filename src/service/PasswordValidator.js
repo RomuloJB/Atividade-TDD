@@ -39,6 +39,12 @@ class PasswordValidator {
             throw new Error(mensagens.SENHA_SEM_CARACTERE_ESPECIAL);
         }
     }
+
+    static validarEspacos(senha) {
+        if (/\s/.test(senha)) {
+            throw new Error(mensagens.SENHA_COM_ESPACO);
+        }
+    }
 }
 
 module.exports = { PasswordValidator };
