@@ -6,32 +6,26 @@ describe('PasswordValidator', () => {
         expect(() => PasswordValidator.validar('Ab1!'))
             .toThrow(mensagens.SENHA_MUITO_CURTA);
     });
-
     test('deve rejeitar senha sem letra maiúscula', () => {
         expect(() => PasswordValidator.validar('abc123!@'))
             .toThrow(mensagens.SENHA_SEM_MAIUSCULA);
     });
-
     test('deve rejeitar senha sem letra minúscula', () => {
         expect(() => PasswordValidator.validar('ABC123!@'))
             .toThrow(mensagens.SENHA_SEM_MINUSCULA);
     });
-
     test('deve rejeitar senha sem número', () => {
         expect(() => PasswordValidator.validar('Abcdef!@'))
             .toThrow(mensagens.SENHA_SEM_NUMERO);
     });
-
     test('deve rejeitar senha sem caractere especial', () => {
         expect(() => PasswordValidator.validar('Abcdef12'))
             .toThrow(mensagens.SENHA_SEM_CARACTERE_ESPECIAL);
     });
-
     test('deve rejeitar senha com espaço em branco', () => {
         expect(() => PasswordValidator.validar('Abc 123!'))
             .toThrow(mensagens.SENHA_COM_ESPACO);
     });
-
     test('deve aceitar senha válida', () => {
         expect(PasswordValidator.validar('Abc123!@')).toBe(true);
     });
