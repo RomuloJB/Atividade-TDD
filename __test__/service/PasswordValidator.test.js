@@ -26,4 +26,9 @@ describe('PasswordValidator', () => {
         expect(() => PasswordValidator.validar('Abcdef12'))
             .toThrow(mensagens.SENHA_SEM_CARACTERE_ESPECIAL);
     });
+
+    test('deve rejeitar senha com espaço em branco', () => {
+        expect(() => PasswordValidator.validar('Abc 123!'))
+            .toThrow(mensagens.SENHA_COM_ESPACO);
+    });
 });
