@@ -33,6 +33,12 @@ class PasswordValidator {
             throw new Error(mensagens.SENHA_SEM_NUMERO);
         }
     }
+
+    static validarCaractereEspecial(senha) {
+        if (!/[!@#$%^&*]/.test(senha)) {
+            throw new Error(mensagens.SENHA_SEM_CARACTERE_ESPECIAL);
+        }
+    }
 }
 
 module.exports = { PasswordValidator };
