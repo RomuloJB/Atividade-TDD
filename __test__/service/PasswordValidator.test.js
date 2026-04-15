@@ -17,5 +17,8 @@ describe('PasswordValidator', () => {
             .toThrow(mensagens.SENHA_SEM_MINUSCULA);
     });
 
-    
+    test('deve rejeitar senha sem número', () => {
+        expect(() => PasswordValidator.validar('Abcdef!@'))
+            .toThrow(mensagens.SENHA_SEM_NUMERO);
+});
 });
