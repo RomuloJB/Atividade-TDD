@@ -1,6 +1,8 @@
 function isPasswordValid(password) {
-    const hasMinLenght = password.lenght >= 8;
-    return hasMinLenght;
+    const hasMinLength = password.length >= 8;
+    const hasUppercase = /[A-Z]/.test(password);
+
+    return hasMinLength && hasUppercase;
 }
 
 module.exports = { isPasswordValid };
